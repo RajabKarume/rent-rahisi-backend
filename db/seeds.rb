@@ -18,7 +18,7 @@ user4 = Landlord.create(username: "Lucy", password: "user4", full_name: "Lucy Ma
 puts "⚡ apartments"
 apartments = []
 15.times do
-    apartments << Apartment.create(name:Faker::Ancient.god, location: ["Ongata Rongai", "Langata", "Ruiru", "Juja", "Roysambu", "Kileleshwa", "South B" ].sample, number_of_houses: rand(1..50).to_i)
+    apartments << Apartment.create(name:Faker::Ancient.god, location: ["Ongata Rongai", "Langata", "Ruiru", "Juja", "Roysambu", "Kileleshwa", "South B" ].sample, number_of_houses: rand(1..50).to_i, landlord_id: [user1, user2, user3, user4].sample.id)
 end
 
 puts "🦸‍♀️ tenants"
@@ -30,6 +30,7 @@ tenants = []
         email: Faker::Internet.email,
         house_number: rand(1..40),
         rent: rand(3000..70000).to_i,
-        password: Faker::Internet.password
+        password: Faker::Internet.password,
+        apartment_id: rand(1..15).to_i
     )
 end
