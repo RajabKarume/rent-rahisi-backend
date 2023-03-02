@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :tenants, only: [:show, :delete, :create, :index, :update], defaults: { format: :json }
+  resources :landlords, only: [:show, :delete, :create, :index, :update], defaults: { format: :json }
+  resources :apartments, only: [:show, :delete, :create, :index, :update], defaults: { format: :json }
 end
