@@ -28,3 +28,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'rack-cors'
+
+gem 'bundler', '~> 2.3', '>= 2.3.26'
+gem 'faker', '~> 2.17'
+gem 'active_model_serializers'
